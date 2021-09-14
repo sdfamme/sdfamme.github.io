@@ -52,10 +52,9 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
-    steps:
-      - uses: ${{secrets.PASSWORD}}
+      - name: secret
         env:
-        PASSWORD: ${{secrets.PASSWORD}}
+          PASSWORD: ${{secrets.PASSWORD}}
         
 
 
