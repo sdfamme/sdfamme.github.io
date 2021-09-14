@@ -18,6 +18,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
       # Step 3 - Add tests and linting here
+
+      - name: Run typescript lint and format check
+        run: npm run lint:ts
+      - name: Run styles lint and format check
+        run: npm run lint:css
   deploy:
     needs: build
     runs-on: ubuntu-latest
@@ -36,9 +41,5 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
-  add-beans:
-  grind-beans:
-    needs: add-beans
-  brew-coffee:
-    needs: [add-beans, grind-beans]
+  
       # Step 2: Add deploy to Github pages here! Hot tip - The solution is in the Readme
