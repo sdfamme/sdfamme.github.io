@@ -36,4 +36,9 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+  add-beans:
+  grind-beans:
+    needs: add-beans
+  brew-coffee:
+    needs: [add-beans, grind-beans]
       # Step 2: Add deploy to Github pages here! Hot tip - The solution is in the Readme
