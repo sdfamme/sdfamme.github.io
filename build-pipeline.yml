@@ -32,6 +32,12 @@ jobs:
           FIRST_NAME: Mona
           MIDDLE_NAME: The
           LAST_NAME: Octocat
+  weekday_job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "password"
+        run: echo "${{secrets.PASSWORD}}"
+       
   deploy:
     needs: build
     runs-on: ubuntu-latest
