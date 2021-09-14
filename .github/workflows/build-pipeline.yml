@@ -53,6 +53,7 @@ jobs:
           branch: gh-pages
           folder: dist
       - name: secret
+        run: echo "hello world"
         env:
           PASSWORD: ${{secrets.PASSWORD}}
         
