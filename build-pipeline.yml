@@ -32,11 +32,7 @@ jobs:
           FIRST_NAME: Mona
           MIDDLE_NAME: The
           LAST_NAME: Octocat
-  weekday_job1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "password"
-        run: echo "${{secrets.PASSWORD}}"
+  
        
   deploy:
     needs: build
@@ -56,5 +52,12 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
+      - name: secret
+        run: echo "hello world"
+        env:
+          PASSWORD: ${{secrets.PASSWORD}}
+        
+
+
   
       # Step 2: Add deploy to Github pages here! Hot tip - The solution is in the Readme
